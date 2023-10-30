@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main  # Set this to your default branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Build and Deploy
+      uses: Ivan-Uspensky/Ivan-Uspensky.github.io
+      with:
+        branch: main  # The branch the action should deploy to.
+        folder: build      # The folder the action should deploy.
+
