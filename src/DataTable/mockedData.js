@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 
-export const generateColors = () => {
+const generateColors = () => {
   const colors = [
     { value: 'red', label: 'Red' },
     { value: 'green', label: 'Green' },
@@ -10,9 +10,9 @@ export const generateColors = () => {
   return colors;
 }
 
-const colors = generateColors().map(color => color.value)
-
-export const generateData = (rows, subRows) => {
+const generateData = (rows, subRows) => {
+  const colors = generateColors().map(color => color.value);
+  
   const data = {
     columns: [
       { id: 'name', ordinalNo: 1, title: 'Name', type: 'string', width: 100 },
@@ -50,3 +50,5 @@ export const generateData = (rows, subRows) => {
 
   return data;
 }
+
+export { generateColors, generateData }; 
