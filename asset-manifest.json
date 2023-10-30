@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Ivan-Uspensky/Ivan-Uspensky.github.io/static/css/main.17a72466.css",
+    "main.js": "/Ivan-Uspensky/Ivan-Uspensky.github.io/static/js/main.d2d26808.js",
+    "static/js/787.78a8c794.chunk.js": "/Ivan-Uspensky/Ivan-Uspensky.github.io/static/js/787.78a8c794.chunk.js",
+    "index.html": "/Ivan-Uspensky/Ivan-Uspensky.github.io/index.html",
+    "main.17a72466.css.map": "/Ivan-Uspensky/Ivan-Uspensky.github.io/static/css/main.17a72466.css.map",
+    "main.d2d26808.js.map": "/Ivan-Uspensky/Ivan-Uspensky.github.io/static/js/main.d2d26808.js.map",
+    "787.78a8c794.chunk.js.map": "/Ivan-Uspensky/Ivan-Uspensky.github.io/static/js/787.78a8c794.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17a72466.css",
+    "static/js/main.d2d26808.js"
+  ]
+}
