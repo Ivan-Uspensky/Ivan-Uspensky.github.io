@@ -59,7 +59,6 @@ export const TableCell = ({ getValue, row, column, table }) => {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onBlur={onBlur}
-          type={columnMeta?.type || "text"}
         />);
         break
       default:
@@ -81,7 +80,7 @@ export const TableCell = ({ getValue, row, column, table }) => {
           >
             {row.getIsExpanded() ? "-" : "+"}
           </button>
-        ) : <span style={{display: "inline-block", width: "26px"}}/>}
+        ) : <span className="cell-expand-placeholder"/>}
         {el}
       </div>
     )

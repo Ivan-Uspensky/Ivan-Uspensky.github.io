@@ -108,7 +108,6 @@ export const DataTable = () => {
   const tableContainerRef = useRef(null);
   const { rows } = table.getRowModel();
   
-  
   const rowVirtualizer = useVirtual({
     parentRef: tableContainerRef,
     size: rows.length,
@@ -116,11 +115,11 @@ export const DataTable = () => {
   });
   const { virtualItems: virtualRows, totalSize } = rowVirtualizer;
 
-  const paddingTop = virtualRows.length > 0 ? virtualRows?.[0]?.start || 0 : 0
+  const paddingTop = virtualRows.length > 0 ? virtualRows?.[0]?.start || 0 : 0;
   const paddingBottom =
     virtualRows.length > 0
       ? totalSize - (virtualRows?.[virtualRows.length - 1]?.end || 0)
-      : 0
+      : 0;
 
   return (
     <>

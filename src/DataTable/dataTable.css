@@ -55,6 +55,11 @@ table .cell-expand-control {
   width: 20px
 }
 
+table .cell-expand-placeholder {
+  display: inline-block;
+  width: 30px;
+}
+
 table input, select {
   border: 1px solid #ccc;
   border-radius: 4px;
