@@ -8,7 +8,6 @@ import {
   getExpandedRowModel,
   getFilteredRowModel
 } from "@tanstack/react-table";
-import { colorOptions } from "./mockedData";
 import { TableCell } from "./TableCell";
 import Spinner from "../Spinner";
 import { DebouncedInput } from "../DebouncedInput";

@@ -1,6 +1,5 @@
 import { generateData, generateColors } from "./DataTable/mockedData";
 
-// export function fakeFetch(rows, subRows) {
 export const fakeFetch = (url, {rows, subRows}) => {
   return new Promise((resolve) => {
     const delay = 1000 + Math.random() * 1000;
