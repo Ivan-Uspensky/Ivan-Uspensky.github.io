@@ -1,0 +1,85 @@
+.table-filter,
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 14px;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+  background-color: #bd534b;
+  color: #ffffff;
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 10px 15px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: #f6f6f6;
+}
+
+table tbody tr:last-of-type {
+  border-bottom: 2px solid #bd534b;
+}
+
+table td:first-child input {
+  min-width: 190px;
+}
+
+table td:nth-child(2) input {
+  min-width: 190px;
+}
+
+table .footer-buttons button {
+  border: none;
+  background-color: transparent;
+}
+
+table .cell-expand-control {
+  cursor: pointer;
+  margin-right: 10px;
+  width: 20px
+}
+
+table input, select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+table input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+}
+
+.table-container {
+  height: 500px;
+  overflow: auto;
+}
+
+.spinner-cointainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000050;
+  position: absolute;
+  z-index: 9;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
