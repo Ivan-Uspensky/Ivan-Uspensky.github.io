@@ -41,44 +41,47 @@ export const DataTable = () => {
       try {
         setIsLoading(true)
         const storedData = JSON.parse(localStorage.getItem("tableData"));
-      if (storedData !== null) {
-        const colors = await fakeFetch("/colors", {});
-        setData(storedData);
-        setColors(colors);
-      } else {
-        const [data, colors] = await Promise.all([
-          fakeFetch("/data", {
-            rows: 100, 
-            subRows: 2}),
-          fakeFetch("/colors", {})]);
-        setData(data);
-        setColors(colors);
-      }
-    } catch (error) {
-      // silent error handler
+        if (storedData !== null) {
+          const colors = await fakeFetch("/colors", {});
+          setData(storedData);
+          setColors(colors);
+        } else {
+          const [data, colors] = await Promise.all([
+            fakeFetch("/data", {
+              rows: 100, 
+              subRows: 2}),
+            fakeFetch("/colors", {})]);
+          setData(data);
+          setColors(colors);
+        }
+      } catch (error) {
+        // silent error handler
     } finally { 
       setIsLoading(false);
     }
     })()
   }, []);
   
-  const updateData = (rowIndex, columnId, value) => {
+  const updateCell = (prev, rowId, columnId, value) => {
+    return [...prev].map(row => {
+      if (row.id === rowId) {
+        return { ...row, [columnId]: value };
+      }
+      if (row.subRows) {
+        return { ...row, subRows: updateCell(row.subRows, rowId, columnId, value) };
+      }
+      return row;
+    });
+  }
+
+  const updateData = (rowId, columnId, value) => {
     setData((prev) => {
-      const updatedData = prev.data.map((row, index) => {
-        if (index === rowIndex) {
-          return {
-            ...prev.data[rowIndex],
-            [columnId]: value,
-          };
-        }
-        return row;
-      });
       const newData = {
-        ...prev,
-        data: updatedData,
+        ...prev,  
+        data: updateCell(prev.data, rowId, columnId, value)
       };
       localStorage.setItem("tableData", JSON.stringify(newData));
-      return newData;
+      return newData
     });
   };
 

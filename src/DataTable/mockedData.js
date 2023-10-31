@@ -34,7 +34,7 @@ const generateData = (rows, subRows) => {
     };
 
     for (let j = 1; j <= subRows; j++) {
-      const subRowId = `${i}.${j}`;
+      const subRowId = faker.string.nanoid(10);
       const subRow = {
         id: subRowId,
         name: faker.vehicle.model(),

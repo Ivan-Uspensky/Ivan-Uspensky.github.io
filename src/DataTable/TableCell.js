@@ -14,18 +14,22 @@ export const TableCell = ({ getValue, row, column, table }) => {
   }, [initialValue]);
 
   const onBlur = (e) => {
-    tableMeta?.updateData(row.index, column.id, value);
+    updateTableMeta(value);
   };
 
   const onSelectChange = (e) => {
     setValue(e.target.value);
-    tableMeta?.updateData(row.index, column.id, e.target.value);
+    updateTableMeta(e.target.value);
   };
 
   const onCheckChange = (e) => {
     setValue(e.target.checked);
-    tableMeta?.updateData(row.index, column.id, e.target.checked);
+    updateTableMeta(e.target.checked);
   };
+
+  const updateTableMeta = (value) => {
+    tableMeta?.updateData(row.original.id, column.id, value);
+  }
 
   const renderCellType = (type) => {
     let el;
